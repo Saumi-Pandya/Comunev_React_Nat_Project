@@ -1,0 +1,12 @@
+{
+  "name": "ComunevReactNatProject",
+  "displayName": "ComunevReactNatProject",
+  "expo": {
+    "name": "ComunevReactNatProject",
+    "slug": "ComunevReactNatProject",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
