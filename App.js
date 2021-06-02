@@ -21,7 +21,7 @@ export default class App extends Component {
       <View style={styles.container }>
         <FlatList
           data={this.state.data}
-          keyExtractor={(x, i) => i}
+          keyExtractor={(x, i) => i.toString()}
           renderItem={({ item }) =>
             <Text>
               {`${item.name.title} ${item.name.first} ${item.name.last}`}
