@@ -1,24 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import React,{Component} from 'react';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import React, { Component } from "react";
+import { FlatList, StyleSheet, Text, View } from "react-native";
 
 export default class App extends Component {
+  state = {
+    data: []
+  };
 
-  state = {data:[]};
-
-  componentDidMount(){
+  componentDidMount() {
     this.fetchData();
   }
 
-  fetchData = async()=>{
-      const response = await fetch(' https://randomuser.me/api/?results=100&inc=name')
-      const jsonObj = await response.json();
-      this.setState({data:jsonObj.results});
+  fetchData = async () => {
+    const response = await fetch("https://randomuser.me/api/?results=100&inc=name");
+    const json = await response.json();
+    this.setState({ data: json.results });
   };
 
   render() {
     return (
-      <View style={styles.container}>
+      <View style={styles.container }>
         <FlatList
           data={this.state.data}
           keyExtractor={(x, i) => i}
@@ -30,14 +30,15 @@ export default class App extends Component {
       </View>
     );
   }
-  
-};
+}
 
 const styles = StyleSheet.create({
   container: {
+    marginTop: 35,
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#F5FCFF"
+    
+  }
 });
